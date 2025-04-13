@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'leaflet/dist/leaflet.css';
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap');
+:root {
+  --primary-color: #008577;
+  /*  #4a6fa5 */
+  --main-text-color: #27282b;
+  --error-color: #e32b2b;
+  --button-hover-color: #014e45; 
+  /* #3a5a8f */
+  --borders--color: #a6a7ab;
+  --grey-bg-color: #f0f0f0;
+  --main-bg-color: #253237;
+  --white-text-color: #fef8f8;
+  --white-hover-text-color: #26cfbc; 
+
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #27282b;
+}
+li{
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+

@@ -1,0 +1,99 @@
+/* Додайте цей імпорт шрифтів у верхній частині вашого CSS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+.intro-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.intro-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transition: background-image 1s ease-in-out;
+  z-index: 1;
+}
+
+.intro-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); 
+  backdrop-filter: blur(1.5px);
+  z-index: 2;
+}
+
+.intro-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.h2-header {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  letter-spacing: 1px;
+}
+
+.h5-content {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.custom-button {
+  margin-top: 2rem !important;
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border-radius: 30px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  text-transform: none !important;
+}
+
+.custom-button:hover {
+  background-color: var(--button-hover-color) !important;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+@media (max-width: 768px) {
+  .intro-content h2 {
+    font-size: 2.2rem;
+  }
+  
+  .intro-content h5 {
+    font-size: 1.2rem;
+  }
+  
+  .custom-button {
+    padding: 10px 24px !important;
+    font-size: 1rem !important;
+  }
+}
