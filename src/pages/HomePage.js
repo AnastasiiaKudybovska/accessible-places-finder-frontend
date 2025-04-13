@@ -121,9 +121,7 @@ const HomePage = () => {
           </Typography>
         </Box>
         
-        <Grid container spacing={3}  sx={{ 
-  display: { xs: 'block', md: 'flex' } 
-}}>
+        <Grid container spacing={3}  sx={{ display: { xs: 'block', md: 'flex' } }}>
           <Grid item xs={12} md={showFilters ?6 : 2} 
             sx={{ 
               position: 'relative',

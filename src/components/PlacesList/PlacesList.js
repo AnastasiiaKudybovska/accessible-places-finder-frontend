@@ -1,5 +1,6 @@
 import { Box, Typography, Grid, Paper, Chip, Pagination, Stack } from '@mui/material';
 import { useState, useRef } from 'react';
+import tagColors from '../../config/tagColors'
 
 const PlacesList = ({ places }) => {
   const [page, setPage] = useState(1);

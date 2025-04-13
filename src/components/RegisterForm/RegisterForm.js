@@ -206,7 +206,11 @@ const RegisterForm = () => {
               fontSize: '1rem',
               borderRadius: 2,
               fontWeight: 'bold',
-              backgroundColor: 'var(--primary-color)'
+              backgroundColor: 'var(--primary-color)',
+              '&:hover': {
+                backgroundColor: 'var(--button-hover-color)',
+                boxShadow: '0px 6px 12px rgba(0, 0, 0, 0.15)'
+              },
             }}
           >
             Зареєструватися
