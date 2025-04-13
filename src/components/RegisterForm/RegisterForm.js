@@ -15,7 +15,7 @@ import HowToRegIcon from '@mui/icons-material/HowToReg';
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -36,12 +36,13 @@ const RegisterForm = () => {
     }
     try {
       await register({
-        name: formData.name,
+        username: formData.username,
         email: formData.email,
         password: formData.password,
       });
       navigate('/');
     } catch (err) {
+      console.log(err);
       setError('Помилка реєстрації. Можливо, email вже використовується.');
     }
   };
@@ -116,9 +117,9 @@ const RegisterForm = () => {
             margin="normal"
             required
             fullWidth
-            id="name"
+            id="username"
             label="Ім'я"
-            name="name"
+            name="username"
             autoComplete="name"
             autoFocus
             value={formData.name}

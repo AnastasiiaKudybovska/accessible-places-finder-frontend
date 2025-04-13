@@ -10,7 +10,9 @@ import Filters from '../components/Filters/Filters';
 import PlacesList from '../components/PlacesList/PlacesList';
 import Map from '../components/Map/Map';
 import HomeIntro from '../components/HomeIntro/HomeIntro';
+import axios from 'axios';
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 const HomePage = () => {
   const [places, setPlaces] = useState([]);
@@ -26,7 +28,7 @@ const HomePage = () => {
     hostels: true,
     pharmacy: true,
   });
-  const [mapCenter] = useState([50.4501, 30.5234]); // Центр Києва
+  const [mapCenter] = useState([49.839, 24.015]); // Центр Lviv
   const [showFilters, setShowFilters] = useState(true);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -53,18 +55,11 @@ const HomePage = () => {
   useEffect(() => {
     const fetchPlaces = async () => {
       try {
-        const response = await fetch(
-          `https://overpass-api.de/api/interpreter?data=[out:json];
-          (node(50.447,30.513,50.454,30.530)
-            [~"wheelchair|toilets_wheelchair|tactile_paving|amenity|tourism|office"~"."];
-          way(50.447,30.513,50.454,30.530)
-            [~"wheelchair|toilets_wheelchair|tactile_paving|amenity|tourism|office"~"."];
-          relation(50.447,30.513,50.454,30.530)
-            [~"wheelchair|toilets_wheelchair|tactile_paving|amenity|tourism|office"~"."];
-          );out body;>;out skel qt;`
-        );
-        const data = await response.json();
-        setPlaces(data.elements || []);
+        const response = await axios.get(`${backendUrl}/api/objects/nodes`);
+
+        const data = response.data;
+        setPlaces(data.nodes || []);
+        console.log(data.nodes)
       } catch (error) {
         console.error('Помилка при отриманні даних:', error);
       } finally {
